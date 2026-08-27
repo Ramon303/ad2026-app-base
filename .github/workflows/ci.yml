@@ -41,5 +41,5 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/${{ github.repository_name }}:latest
-            ghcr.io/${{ github.repository_owner }}/${{ github.repository_name }}:${{ env.SHORT_SHA }}
+            ghcr.io/${{ github.actor }}/${{ github.repository }}:latest
+            ghcr.io/${{ github.actor }}/${{ github.repository }}:${{ env.SHORT_SHA }}
