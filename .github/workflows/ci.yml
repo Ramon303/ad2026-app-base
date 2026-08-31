@@ -18,7 +18,10 @@ jobs:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
         with:
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64, linux/arm64
+
+      - name: Set up Docker Buildx
+      	uses: docker/setup-buildx-action@v3
 
       - name: Set short git commit SHA
         id: vars
@@ -35,7 +38,7 @@ jobs:
         uses: docker/build-push-action@v7
         with:
           context: ./web  # <-- Targets only the web directory
-          platforms: linux/amd64,linux/arm64
+          platforms: linux/amd64, linux/arm64
           push: true
           tags: |
             ghcr.io/ramon303/ad2026-app-base:latest
